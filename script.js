@@ -77,16 +77,23 @@ function reset() {
 // displays the questions in order
 function displayQuestion() {
   state = "quiz";
-  var titleText = questions[cursor].title;
-  quizTitle.textContent = titleText;
-  for (var i = 0; i < questions[cursor].possibleChoices.length; i++) {
-    var choiceButton = document.createElement("button");
-    choiceButton.textContent = questions[cursor].possibleChoices[i];
-    choiceButton.addEventListener("click", function () {
-      checkChoice();
-    });
-    quizEl.append(choiceButton);
+  var question = questions[cursor];
+  questionsEl.innerHTML = null;
+  quizTitle.textContent = question.title;
+  for (answer of question.possibleChoices) {
+    var liEl = document.createElement("button");
+    liEl.textContent = answer;
+    questionsEl.appendChild(liEl);
   }
+//   code below is broken, didnt want to delete all at once so I know what I was trying to do.
+//   for (var i = 0; i < questions[cursor].possibleChoices.length; i++) {
+//     var choiceButton = document.createElement("button");
+//     choiceButton.textContent = questions[cursor].possibleChoices[i];
+//     choiceButton.addEventListener("click", function () {
+//       checkChoice();
+//     });
+//     quizEl.append(choiceButton);
+//   }
 }
 
 function checkChoice(choice) {
