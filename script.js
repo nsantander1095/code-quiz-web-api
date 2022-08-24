@@ -85,6 +85,7 @@ function displayQuestion() {
     liEl.textContent = answer;
     questionsEl.appendChild(liEl);
   }
+  return liEl;
 //   code below is broken, didnt want to delete all at once so I know what I was trying to do.
 //   for (var i = 0; i < questions[cursor].possibleChoices.length; i++) {
 //     var choiceButton = document.createElement("button");
@@ -112,6 +113,24 @@ startBtn.addEventListener("click", function () {
   displayQuestion();
   displayState();
 });
+
+// liEl.addEventListener("click", function(event) {
+//     event.preventDefault();
+//     var element = event.target;
+//     if (element.textContent === questions[cursor].correct) {
+//         var index = Array.from(element.parentElement.children).indexOf(element);
+//         console.log(index);
+//         cursor++;
+
+//         if (cursor >= questions.length) {
+//             state = "end";
+//             displayState();
+//         } else {
+//             displayQuestion();
+//         }
+//     }
+// })
+
 // continues to display questions in order
 quizTitle.addEventListener("click", function (event) {
   var element = event.target;
