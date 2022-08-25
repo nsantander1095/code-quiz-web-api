@@ -7,6 +7,8 @@
     <title>Code Quiz</title>
     <!-- instructor provided -->
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
 
     <style>
         * {
@@ -23,16 +25,20 @@
         <p>Try to answer all of the questions in the time provided. If you get a question wrong, you will have 15 seconds deducted from your time.</p>
         <button>Begin</button>
     </section>
-    <section id = "quiz">
+    <section id = "quiz" class="hide">
         <h2 id = "title">Questions</h2>
         <div id = "questions">
 
         </div>
     </section>
-    <section id = "end">
+    <section id = "end" class="hide">
         <h2>Enter Initials</h2>
         <input type = "text"/>
-        <button>Submit</button>
+        <button id="initials">Submit</button>
+    </section>
+    <section id = "highscores" class="hide">
+        <h2>Highscores</h2>
+
     </section>
     <script src = "./script.js"></script>
 </body>
