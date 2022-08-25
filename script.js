@@ -84,6 +84,12 @@ var questions = [
 //   cursor = 0;
 //   init();
 // }
+
+function reset() {
+    startEl.classList.remove('hide');
+    endEl.classList.add('hide');
+    cursor = 0;
+}
 // displays the questions in order
 function displayQuestion() {
   startEl.classList.add("hide");
@@ -174,7 +180,7 @@ function displayHighscore() {
 // }
 // resets the quiz when score is submitted
 submitScoreBtn.addEventListener("click", function () {
-  displayHighscore();
+  //displayHighscore();
   reset();
 });
 // starts quiz, displays first question
